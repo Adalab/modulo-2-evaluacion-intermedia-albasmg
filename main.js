@@ -3,13 +3,15 @@
 const randomNumber = getRandomNumber(100);
 const numberInput = document.querySelector('.js-numberInput');
 const button = document.querySelector('.js-button');
+let attempts = document.querySelector('.js-attempts');
+let clue = document.querySelector('.js-clue');
 let numberInputValue = '';
+let numberOfAttempts = 0;
+console.log(`El número aleatorio es ${randomNumber}`);
 
 function getRandomNumber(max) {
   return Math.ceil(Math.random() * max);
 }
-
-console.log(`El número aleatorio es ${randomNumber}`);
 
 function handleNumberInputChange(event) {
   numberInputValue = parseInt(event.target.value);
@@ -17,14 +19,17 @@ function handleNumberInputChange(event) {
 
 function handleButtonClick(event) {
   event.preventDefault();
+  numberOfAttempts++;
+  attempts.innerHTML = `Número de intentos: ${numberOfAttempts}`;
+
   if (randomNumber === numberInputValue) {
-    console.log('Has ganado campeona!!!');
+    clue.innerHTML = 'Has ganado campeona!!!';
+  } else if (numberInputValue > 100) {
+    clue.innerHTML = 'El número debe estar entre 1 y 100';
   } else if (randomNumber > numberInputValue) {
-    console.log('Demasiado alto');
+    clue.innerHTML = 'Demasiado bajo';
   } else if (randomNumber < numberInputValue) {
-    console.log('Demasiado bajo');
-  } else if (randomNumber > 100) {
-    console.log('El número debe estar entre 1 y 100');
+    clue.innerHTML = 'Demasiado alto';
   }
 }
 
