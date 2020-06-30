@@ -7,15 +7,22 @@
     <title>Módulo 2 - Evaluación intermedia</title>
   </head>
   <body>
-    <h1>Adivina el número</h1>
-    <p>Introduce aquí tu número</p>
+    <h1 class="heading">Adivina el número</h1>
+    <p class="paragraph">Introduce aquí tu número:</p>
     <form>
-      <input type="number" id="numberImput" class="js-numberInput" />
-      <button class="js-button">Prueba</button>
+      <input
+        type="number"
+        id="numberImput"
+        class="numberInput js-numberInput"
+      />
+      <button class="btn js-button">Prueba</button>
     </form>
-    <p>Pista:</p>
-    <p class="js-clue"></p>
-    <p class="js-attempts"></p>
+    <div class="container">
+      <p class="js-clue"></p>
+    </div>
+    <div class="container">
+      <p class="js-attempts"></p>
+    </div>
     <script type="text/javascript" src="main.js"></script>
   </body>
 </html>

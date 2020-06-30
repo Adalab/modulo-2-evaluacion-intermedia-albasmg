@@ -17,11 +17,11 @@ function compareInputNumber() {
   if (randomNumber === numberInputValue) {
     clue.innerHTML = 'Has ganado campeona!!!';
   } else if (numberInputValue > 100) {
-    clue.innerHTML = 'El número debe estar entre 1 y 100';
+    clue.innerHTML = 'Pista: El número debe estar entre 1 y 100';
   } else if (randomNumber > numberInputValue) {
-    clue.innerHTML = 'Demasiado bajo';
+    clue.innerHTML = 'Pista: Demasiado bajo';
   } else if (randomNumber < numberInputValue) {
-    clue.innerHTML = 'Demasiado alto';
+    clue.innerHTML = 'Pista: Demasiado alto';
   }
 }
 
