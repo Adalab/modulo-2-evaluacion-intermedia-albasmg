@@ -15,13 +15,13 @@ function getRandomNumber(max) {
 
 function compareInputNumber() {
   if (randomNumber === numberInputValue) {
-    clue.innerHTML = 'Has ganado campeona!!!';
+    clue.innerHTML = '¡¡¡Has ganado campeona!!! 💃🏻💃🏻💃🏻';
   } else if (numberInputValue > 100) {
-    clue.innerHTML = 'Pista: El número debe estar entre 1 y 100';
+    clue.innerHTML = 'Pista: El número debe estar entre 1 y 100 🤷🏻‍♀️';
   } else if (randomNumber > numberInputValue) {
-    clue.innerHTML = 'Pista: Demasiado bajo';
+    clue.innerHTML = 'Pista: ¡Demasiado bajo! 🙀';
   } else if (randomNumber < numberInputValue) {
-    clue.innerHTML = 'Pista: Demasiado alto';
+    clue.innerHTML = 'Pista: ¡Demasiado alto! 🙀';
   }
 }
 
