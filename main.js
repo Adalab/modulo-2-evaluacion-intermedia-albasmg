@@ -6,22 +6,14 @@ const button = document.querySelector('.js-button');
 let attempts = document.querySelector('.js-attempts');
 let clue = document.querySelector('.js-clue');
 let numberInputValue = '';
-let numberOfAttempts = 0;
+let numberOfAttempts = 1;
 console.log(`El número aleatorio es ${randomNumber}`);
 
 function getRandomNumber(max) {
   return Math.ceil(Math.random() * max);
 }
 
-function handleNumberInputChange(event) {
-  numberInputValue = parseInt(event.target.value);
-}
-
-function handleButtonClick(event) {
-  event.preventDefault();
-  numberOfAttempts++;
-  attempts.innerHTML = `Número de intentos: ${numberOfAttempts}`;
-
+function compareInputNumber() {
   if (randomNumber === numberInputValue) {
     clue.innerHTML = 'Has ganado campeona!!!';
   } else if (numberInputValue > 100) {
@@ -31,6 +23,20 @@ function handleButtonClick(event) {
   } else if (randomNumber < numberInputValue) {
     clue.innerHTML = 'Demasiado alto';
   }
+}
+
+function handleNumberInputChange(event) {
+  numberInputValue = parseInt(event.target.value);
+}
+
+function handleButtonClick(event) {
+  event.preventDefault();
+  attempts.innerHTML = `Número de intentos: ${numberOfAttempts}`;
+
+  if (randomNumber !== numberInputValue) {
+    numberOfAttempts++;
+  }
+  compareInputNumber();
 }
 
 numberInput.addEventListener('keyup', handleNumberInputChange);
